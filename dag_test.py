@@ -24,7 +24,7 @@ dbt_test = KubernetesPodOperator(
                        namespace="airflow",
                        image="170108258435.dkr.ecr.ap-southeast-2.amazonaws.com/dbt_image",
                        cmds=["dbt"],
-                       arguments=["seed", "--profiles-dir", ".", "--fail-fast"],
+                       arguments=["seed", "--profiles-dir", "."],
                        ## no change on below
                        get_logs=True,
                        dag=dag,
