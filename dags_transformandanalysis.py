@@ -26,7 +26,7 @@ with dag:
         namespace="airflow",
         image="170108258435.dkr.ecr.ap-southeast-2.amazonaws.com/dbt_image_test:latest",
         cmds=["dbt"],
-        arguments=["run", "--models transform", "--profiles-dir", "."],
+        arguments=["run", "-m","transform", "--profiles-dir", "."],
         ## no change on below
         get_logs=True,
         dag=dag,
@@ -41,7 +41,7 @@ with dag:
         namespace="airflow",
         image="170108258435.dkr.ecr.ap-southeast-2.amazonaws.com/dbt_image_test:latest",
         cmds=["dbt"],
-        arguments=["run", "--models analysis", "--profiles-dir", "."],
+        arguments=["run", "-m","analysis", "--profiles-dir", "."],
         ## no change on below
         get_logs=True,
         dag=dag,
