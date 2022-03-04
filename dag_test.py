@@ -30,7 +30,7 @@ dbt_test = KubernetesPodOperator(
                        dag=dag,
                        is_delete_operator_pod=False,
                      #   config_file=KUBE_CONFIG,
-                       in_cluster=False,
+                       in_cluster=True,
                      #   service_account_name=KUBE_SERVICE_ACCOUNT
                        )
 # from email.policy import default
