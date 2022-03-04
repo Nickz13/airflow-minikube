@@ -22,7 +22,7 @@ dbt_test = KubernetesPodOperator(
                        task_id="dbt-test",
                        name="dbt-test",
                        namespace="airflow",
-                       image="170108258435.dkr.ecr.ap-southeast-2.amazonaws.com/dbt_image",
+                       image="170108258435.dkr.ecr.ap-southeast-2.amazonaws.com/dbt_image_test:latest",
                        cmds=["dbt"],
                        arguments=["seed", "--profiles-dir", "."],
                        ## no change on below
