@@ -34,19 +34,19 @@ with dag:
                        in_cluster=True,
                      #   service_account_name=KUBE_SERVICE_ACCOUNT
                        )
-    task2 = KubernetesPodOperator(
-                       task_id="dbt-analysis",
-                       name="dbt-analysis",
-                       namespace="airflow",
-                       image="170108258435.dkr.ecr.ap-southeast-2.amazonaws.com/dbt_image_test:latest",
-                       cmds=["dbt"],
-                       arguments=["run", "--models analysis", "--profiles-dir", "."],
-                       ## no change on below
-                       get_logs=True,
-                       dag=dag,
-                       is_delete_operator_pod=False,
-                     #   config_file=KUBE_CONFIG,
-                       in_cluster=True,
-                     #   service_account_name=KUBE_SERVICE_ACCOUNT
-                       )
+       task2 = KubernetesPodOperator(
+                          task_id="dbt-analysis",
+                          name="dbt-analysis",
+                          namespace="airflow",
+                          image="170108258435.dkr.ecr.ap-southeast-2.amazonaws.com/dbt_image_test:latest",
+                          cmds=["dbt"],
+                          arguments=["run", "--models analysis", "--profiles-dir", "."],
+                          ## no change on below
+                          get_logs=True,
+                          dag=dag,
+                          is_delete_operator_pod=False,
+                        #   config_file=KUBE_CONFIG,
+                          in_cluster=True,
+                        #   service_account_name=KUBE_SERVICE_ACCOUNT
+                          )
 task1>>task2
