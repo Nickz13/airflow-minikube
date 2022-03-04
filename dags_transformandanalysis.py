@@ -49,3 +49,4 @@ with dag:
                        in_cluster=True,
                      #   service_account_name=KUBE_SERVICE_ACCOUNT
                        )
+task1>>task2
