@@ -15,7 +15,7 @@ default_args = {
    'provide_context': True
 }
 
-dag = DAG('kubernetes_pod_example',default_args=default_args, schedule_interval=None)
+dag = DAG('kubernetes_transform_and_analysis',default_args=default_args, schedule_interval=None)
 
 # Task
 
