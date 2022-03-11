@@ -12,7 +12,8 @@ default_args = {
    'owner': 'airflow',
    'depends_on_past': False,
    'start_date': datetime(2021, 1, 1),
-   'provide_context': True
+   'provide_context': True,
+   imagePullPolicy: Never
 }
 
 dag = DAG('kubernetes_pod_example',default_args=default_args, schedule_interval=None)
@@ -24,7 +25,6 @@ dbt_test = KubernetesPodOperator(
                        namespace="airflow",
 #                        image="170108258435.dkr.ecr.ap-southeast-2.amazonaws.com/dbt_image_test:latest",
                        image = "dbt_image_test",
-                       imagePullPolicy="Never",
                        cmds=["dbt"],
                        arguments=["seed", "--profiles-dir", "."],
                        ## no change on below
