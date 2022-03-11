@@ -13,7 +13,7 @@ default_args = {
    'depends_on_past': False,
    'start_date': datetime(2021, 1, 1),
    'provide_context': True,
-   imagePullPolicy: Never
+   'imagePullPolicy': Never
 }
 
 dag = DAG('kubernetes_pod_example',default_args=default_args, schedule_interval=None)
