@@ -35,7 +35,7 @@ dbt_test = KubernetesPodOperator(
                      #   config_file=KUBE_CONFIG,
                        in_cluster=True,
                      #   service_account_name=KUBE_SERVICE_ACCOUNT
-                       env={
+                       env_vars={
                               'dbt_user': '{{ var.value.dbt_user }}',
                               'dbt_password': '{{ var.value.dbt_password }}',
                               **os.environ
