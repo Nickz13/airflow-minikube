@@ -1,6 +1,7 @@
 from airflow import DAG
 from datetime import datetime
 from airflow.contrib.operators.kubernetes_pod_operator import KubernetesPodOperator
+import os
 
 # Constants
 # KUBE_CONFIG = '/mnt/airflow/dags/kube_config.yaml'
