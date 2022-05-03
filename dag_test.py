@@ -31,7 +31,7 @@ dbt_test = KubernetesPodOperator(
                        ## no change on below
                        get_logs=True,
                        dag=dag,
-                       is_delete_operator_pod=True,
+#                        is_delete_operator_pod=True,
                      #   config_file=KUBE_CONFIG,
                        in_cluster=True,
                      #   service_account_name=KUBE_SERVICE_ACCOUNT
