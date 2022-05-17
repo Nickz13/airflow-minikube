@@ -10,7 +10,7 @@ import os
 
 # DAG
 default_args = {
-   'owner': 'airflow',
+   'owner': 'Nitin',
    'depends_on_past': False,
    'start_date': datetime(2021, 1, 1),
    'provide_context': True
